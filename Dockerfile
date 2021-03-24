@@ -4,9 +4,8 @@ FROM tezos/tezos:v8.2
 
 USER root
 RUN \
-	apk -Uuv add groff less python3 py3-setuptools curl jq && \
-	pip3 install --ignore-installed six && \
-	pip3 install --ignore-installed awscli && \
+	apk -Uuv add groff less python3 py3-pip curl jq && \
+	pip3 install --ignore-installed six awscli && \
 	rm /var/cache/apk/*
 
 COPY ./start-updater.sh /home/tezos/start-updater.sh
